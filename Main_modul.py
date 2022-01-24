@@ -2,8 +2,6 @@
 import pygame
 import pygame_gui
 import Game_modul
-import importlib_resources
-import pkg_resources
 
 
 pygame.init()
