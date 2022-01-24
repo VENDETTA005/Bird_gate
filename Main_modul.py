@@ -2,6 +2,9 @@
 import pygame
 import pygame_gui
 import Game_modul
+import importlib_resources
+import pkg_resources
+
 
 pygame.init()
 
@@ -86,9 +89,9 @@ def main():
             start_menu.manager.process_events(e) # проверка событий менеджера меню
         # обновление меню
         start_menu.manager.update(time_delta)
-        # отрисовка меню
+        # отрисовка меню на рабочую поверхность screen
         start_menu.draw()
-        # вывод в рабочее игровое окно текущего вида поверхности
+        # вывод (отображение) в рабочее игровое окно текущего вида поверхности
         pygame.display.flip()
 
     #print('Game over! Score: %i' % score)
