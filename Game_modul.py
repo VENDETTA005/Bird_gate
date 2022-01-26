@@ -10,7 +10,7 @@ from pygame.locals import *
 
 
 FPS = 60 # частота смены кадров в сек.
-ANIMATION_SPEED = 0.18*1  # скорость движения в пикселях в миллисек.
+ANIMATION_SPEED = 18*1  # скорость движения в пикселях в миллисек.
 WIN_WIDTH = 284 * 2      # размер окна в пикселях
 WIN_HEIGHT = 512
 
@@ -153,7 +153,7 @@ class IcePair(pygame.sprite.Sprite):  # класс ледяная пара (во
 def load_images():
 
     def load_image(img_file_name):
-        # функция принимает название файла, добавляет к нему путьЮ и возвращает загруженную картинку из этого файла
+        # функция принимает название файла, добавляет к нему путь и возвращает загруженную картинку из этого файла
 
         file_name = os.path.join(os.path.dirname(__file__),
                                  'images', img_file_name)
@@ -216,8 +216,8 @@ def Play(surf, difficulty):
             elif e.type == KEYUP and e.key in (K_PAUSE, K_p): # если пауза, то инвертируем paused
                 paused = not paused
             elif e.type == MOUSEBUTTONUP or (e.type == KEYUP and
-                    e.key in (K_UP, K_RETURN, K_SPACE)):
-                bird.msec_to_climb = Bird.CLIMB_DURATION
+                    e.key in (K_UP, K_SPACE)):
+                bird.msec_to_climb = Bird.CLIMB_DURATION # присвоить атрибуту "сколько до конца подъёма" полную длительность подъёма
 
         if paused:
             continue  # если пауза, то ничего не делаем и переходим к следующей итерации цикла
